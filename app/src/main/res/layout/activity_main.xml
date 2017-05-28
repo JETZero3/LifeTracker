@@ -8,35 +8,95 @@
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
-    <TextView
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="#33b5e5"
-        android:textSize="50sp"
-        android:textStyle="bold" />
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-    <FrameLayout
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="20"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="100sp"
+            android:gravity="center"
+            android:id="@+id/p1Life" />
+
+        <TextView
+            android:text="20"
+            android:layout_width="0dp"
+            android:textStyle="bold"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="100sp"
+            android:layout_weight="1"
+            android:id="@+id/p2Life" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="?metaButtonBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
 
+            <Button
+                android:text=""
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/p1Up"
+                android:visibility="visible"
+                android:onClick="increaseP1" />
+
+            <Button
+                android:text=""
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/p1Down"
+                android:visibility="visible"
+                android:onClick="decreaseP1" />
         </LinearLayout>
-    </FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text=""
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/p2Up"
+                android:visibility="visible"
+                android:onClick="increaseP2"/>
+
+            <Button
+                android:text=""
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/p2Down"
+                android:visibility="visible"
+                android:onClick="decreaseP2"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>
