@@ -3,4 +3,12 @@
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="menu_options">
+        <item>New Game</item>
+        <item>Players</item>
+        <item>Starting Life</item>
+        <item>Infect</item>
+        <item>Commander</item>
+    </string-array>
 </resources>
