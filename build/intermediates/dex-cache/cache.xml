@@ -30,21 +30,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\jetze\.android\build-cache\2ac5542b879f96e5078f141855d5ca361035eaee\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\jetze\AndroidStudioProjects\LifeTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f6383f15fe5296e4611d8253828c1b63bc4ce1cb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\jetze\AndroidStudioProjects\LifeTracker\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
         <dex dex="C:\Users\jetze\AndroidStudioProjects\LifeTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_17eeab4e0c927d90a0295888f16f296078bf4c6b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jetze\.android\build-cache\2ac5542b879f96e5078f141855d5ca361035eaee\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\jetze\AndroidStudioProjects\LifeTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f6383f15fe5296e4611d8253828c1b63bc4ce1cb\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -133,7 +133,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="49666ecdf913fd08c6f21eff12d4a0ea0ea26fbe">
+        sha1="6ebd7ce6deade4f1cf1604de72b5b4936c5af51a">
         <dex dex="C:\Users\jetze\AndroidStudioProjects\LifeTracker\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_81476894ff8e37bf7bb288c9bfc56b32cab39ec6\classes.dex" />
     </item>
     <item

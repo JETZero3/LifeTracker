@@ -3,10 +3,12 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#000000"
+    android:keepScreenOn="true"
     tools:context="com.example.jetze.lifetracker.MainActivity">
 
     <FrameLayout
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -105,7 +107,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#111"
-        android:choiceMode="multipleChoice"
+        android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp" />
 

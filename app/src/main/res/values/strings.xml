@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">LifeTracker</string>
 
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="starting_life">20</string>
 
     <string-array name="menu_options">
         <item>New Game</item>
