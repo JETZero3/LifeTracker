@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.widget.DrawerLayout;
@@ -42,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
     public static final String Life = "StartingLife";
     public static final String Commander = "Commander";
     public static final String Infect = "Infect";
+    int p1Life, p2Life, p3Life, p4Life;
+    static final String savedP1 = "P1";
+    static final String savedP2 = "P2";
+    static final String savedP3 = "P3";
+    static final String savedP4 = "P4";
 
     SharedPreferences sharedPreferences;
 
@@ -56,47 +62,69 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, menuOptions));
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-        //Set up both player's life totals as integers
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        //Set up both player's life totals
+        if (savedInstanceState != null){
+            p1Life = savedInstanceState.getInt(savedP1);
+            p2Life = savedInstanceState.getInt(savedP2);
+            p3Life = savedInstanceState.getInt(savedP3);
+            p4Life = savedInstanceState.getInt(savedP4);
+        }
+        //SOMETHING WRONG HERE, APP CRASHES ON STARTUP
+        else if (sharedPreferences.contains(savedP1 )){
+            p1Life = sharedPreferences.getInt(savedP1, 0);
+            p2Life = sharedPreferences.getInt(savedP2, 0);
+            p3Life = sharedPreferences.getInt(savedP3, 0);
+            p4Life = sharedPreferences.getInt(savedP4, 0);
+        }
+        else{
+            p1Life = getResources().getInteger(R.integer.starting_life);
+            p2Life = getResources().getInteger(R.integer.starting_life);
+            p3Life = getResources().getInteger(R.integer.starting_life);
+            p4Life = getResources().getInteger(R.integer.starting_life);
+        }
         final TextView p1LifeTotal = (TextView) findViewById(R.id.p1Life);
         p1LifeTotal.setTextColor(Color.RED);
         final TextView p2LifeTotal = (TextView) findViewById(R.id.p2Life);
         p2LifeTotal.setTextColor(Color.BLUE);
+        p1LifeTotal.setText(Integer.toString(p1Life));
+        p2LifeTotal.setText(Integer.toString(p2Life));
         final Button p1UpBtn = (Button) findViewById(R.id.p1Up);
         final Button p1DownBtn = (Button) findViewById(R.id.p1Down);
         final Button p2UpBtn = (Button) findViewById(R.id.p2Up);
         final Button p2DownBtn = (Button) findViewById(R.id.p2Down);
 
-        //sharedPreferences = getSharedPreferences(FileName, Context.MODE_PRIVATE);
+
     }
 
 
     public void increaseP1(View view){
         final TextView p1LifeTotal = (TextView) findViewById(R.id.p1Life);
-        int temp = Integer.parseInt( p1LifeTotal.getText().toString());
-        temp = temp + 1;
-        p1LifeTotal.setText(Integer.toString(temp));
+        p1Life = p1Life + 1;
+        p1LifeTotal.setText(Integer.toString(p1Life));
     }
 
     public void decreaseP1(View view){
         final TextView p1LifeTotal = (TextView) findViewById(R.id.p1Life);
-        int temp = Integer.parseInt( p1LifeTotal.getText().toString());
-        temp = temp - 1;
-        p1LifeTotal.setText(Integer.toString(temp));
+        p1Life = p1Life - 1;
+        p1LifeTotal.setText(Integer.toString(p1Life));
     }
 
     public void increaseP2(View view){
         final TextView p2LifeTotal = (TextView) findViewById(R.id.p2Life);
-        int temp = Integer.parseInt( p2LifeTotal.getText().toString());
-        temp = temp + 1;
-        p2LifeTotal.setText(Integer.toString(temp));
+        p2Life = p2Life + 1;
+        p2LifeTotal.setText(Integer.toString(p2Life));
     }
+
 
     public void decreaseP2(View view){
         final TextView p2LifeTotal = (TextView) findViewById(R.id.p2Life);
-        int temp = Integer.parseInt( p2LifeTotal.getText().toString());
-        temp = temp - 1;
-        p2LifeTotal.setText(Integer.toString(temp));
+        p2Life = p2Life - 1;
+        p2LifeTotal.setText(Integer.toString(p2Life));
     }
+
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
@@ -115,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int id){
                     final TextView p1LifeTotal = (TextView) findViewById(R.id.p1Life);
                     final TextView p2LifeTotal = (TextView) findViewById(R.id.p2Life);
+                    p1Life = getResources().getInteger(R.integer.starting_life);
+                    p2Life = getResources().getInteger(R.integer.starting_life);
+                    p3Life = getResources().getInteger(R.integer.starting_life);
+                    p4Life = getResources().getInteger(R.integer.starting_life);
                     p1LifeTotal.setText(Integer.toString(getResources().getInteger(R.integer.starting_life)));
                     p2LifeTotal.setText(Integer.toString(getResources().getInteger(R.integer.starting_life)));
                     dialog.cancel();
@@ -133,5 +165,28 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        //Save life totals
+        savedInstanceState.putInt(savedP1, p1Life);
+        savedInstanceState.putInt(savedP2, p2Life);
+        savedInstanceState.putInt(savedP3, p3Life);
+        savedInstanceState.putInt(savedP4, p4Life);
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(savedP1, p1Life);
+        editor.putInt(savedP2, p2Life);
+        editor.putInt(savedP3, p3Life);
+        editor.putInt(savedP4, p4Life);
+        editor.apply();
+    }
 
 }
