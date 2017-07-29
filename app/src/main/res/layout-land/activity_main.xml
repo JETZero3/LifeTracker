@@ -16,90 +16,356 @@
             android:id="@+id/texts"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/p1Life"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+            <LinearLayout
+                android:id="@+id/p3p4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="20"
-                android:textSize="100sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:visibility="visible">
 
-            <TextView
-                android:id="@+id/p2Life"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                <TextView
+                    android:id="@+id/p4Life"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="20"
+                    android:rotation="180"
+                    android:textSize="100sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/p3Life"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="20"
+                    android:rotation="180"
+                    android:textSize="100sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/p1p2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="20"
-                android:textSize="100sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/p1Life"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textSize="100sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/p2Life"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textSize="100sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/buttons"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/p1"
-                android:layout_width="0dp"
+                android:id="@+id/p3p4Buttons"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:visibility="visible">
 
-                <Button
-                    android:id="@+id/p1Up"
+                <LinearLayout
+                    android:id="@+id/p4"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:onClick="increaseP1"
-                    android:text=""
-                    android:visibility="visible" />
+                    android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/p1Down"
+                    <LinearLayout
+                        android:id="@+id/p4_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/p4Down5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="decreaseP4_5"
+                            android:text="-5"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/p4Up5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseP4_5"
+                            android:text=""
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/p4_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/p4Down1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="decreaseP4"
+                            android:text=""
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/p4Up1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseP4"
+                            android:text=""
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/p3"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:onClick="decreaseP1"
-                    android:text=""
-                    android:visibility="visible" />
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/p3_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/p3Down5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="decreaseP3_5"
+                            android:text="-5"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/p3Up5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseP3_5"
+                            android:text=""
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/p3_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/p3Down1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="decreaseP3"
+                            android:text=""
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/p3Up1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseP3"
+                            android:text=""
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/p2"
-                android:layout_width="0dp"
+                android:id="@+id/p1p2Buttons"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/p2Up"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                <LinearLayout
+                    android:id="@+id/p1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:onClick="increaseP2"
-                    android:text=""
-                    android:visibility="visible" />
+                    android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/p2Down"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    <LinearLayout
+                        android:id="@+id/p1_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/p1Up1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseP1"
+                            android:text=""
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/p1Down1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="decreaseP1"
+                            android:text=""
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/p1_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/p1Up5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseP1_5"
+                            android:text=""
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/p1Down5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="decreaseP1_5"
+                            android:text="-5"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/p2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:onClick="decreaseP2"
-                    android:text=""
-                    android:visibility="visible" />
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/p2_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/p2Up1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseP2"
+                            android:text=""
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/p2Down1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="decreaseP2"
+                            android:text=""
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/p2_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/p2Up5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseP2_5"
+                            android:text=""
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/p2Down5"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:onClick="decreaseP2_5"
+                            android:text="-5"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
