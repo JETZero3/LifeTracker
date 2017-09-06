@@ -1,24 +1,13 @@
 package com.example.jetze.lifetracker;
 
-import android.annotation.SuppressLint;
-import android.app.Dialog;
-import android.app.FragmentManager;
-import android.app.Fragment;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.os.Build;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
-
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -73,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             p3Life = savedInstanceState.getInt(savedP3);
             p4Life = savedInstanceState.getInt(savedP4);
             numPlayers = savedInstanceState.getInt(Players);
+            startingLife = savedInstanceState.getInt(Life);
             if (numPlayers == 4)
                 set4visibility();
             else
@@ -85,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             p3Life = sharedPreferences.getInt(savedP3, 0);
             p4Life = sharedPreferences.getInt(savedP4, 0);
             numPlayers = sharedPreferences.getInt(Players, 2);
+            startingLife = sharedPreferences.getInt(Life, 20);
             if (numPlayers == 4)
                 set4visibility();
             else
